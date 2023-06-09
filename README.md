@@ -11,6 +11,7 @@ Also using tide information from https://pla.co.uk/Safety/Tidal-information
 - move river-level and pla scripts off RPI to save on data usage on site
 - check sim connection with USB dongle
 
+# Sensor Box Scripts
 
 ## sonarbox-scripts/sonar-camera.py
 Script to take time lapse photos every 2 mins when water is above floor - script defaults to 1000mm
@@ -18,13 +19,26 @@ Script to take time lapse photos every 2 mins when water is above floor - script
 ## sonarbox-scripts/sonar-median-mqtt.py
 Takes median of 11 readings coming in from Serial (Arduino sketch) and then posts to mqtt broker. Runs every 10 minutes.
 
+# Other scripts (running on RPi in office)
+
+Note: 
+Requires: 
+```
+pip install beautifulsoup4
+pip install pytz
+pip install selenium
+pip install paho-mqtt
+```
+Also had to install chromedriver to use selenium
+```
+sudo apt-get install chromium-chromedriver
+```
+
 ## server-scripts/river-level.py
 Webscrapes river level info from https://riverlevels.uk/ and posts them to mqtt broker every 15 mins. 
-(In addition to paho, requires: pip install selenium)
 
 ## server-scripts/pla.py
 Webscrapes tide / river level info from http://www.pla.co.uk/ and posts them to mqtt broker every 15 mins. 
-(In addition to paho, requires: pip install pytz)
 
 ## sonarbox-scripts/config.py (.gitignored)
 Passwords file containing following information:
