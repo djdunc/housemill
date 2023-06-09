@@ -45,6 +45,8 @@ Passwords file containing following information:
 mqttusername="xxx" 
 mqttpassword="xxx"
 
+# Arduino Sketches 
+
 ## arduino-sketches/maxbotix7389read
 Basic sketch to read from sensor using pin 3
 
@@ -58,11 +60,16 @@ Basic sketch to read from sensor using pin 5
 
 ## Crontab settings
 
+On sensor box:
+```
 1-59/2 * * * * /usr/bin/python3 /home/pi/Desktop/sonar-camera.py
 */10 * * * * /usr/bin/python3 /home/pi/Desktop/sonar-median-mqtt.py  >> /home/pi/Desktop/sonar.log 2>&1
+```
+on office RPi:
+```
 1,16,31,46 * * * * /usr/bin/python3 /home/pi/Desktop/river-level.py >> /home/pi/Desktop/river.log 2>&1
 1,16,31,46 * * * * /usr/bin/python3 /home/pi/Desktop/pla.py >> /home/pi/Desktop/pla.log 2>&1
-
+```
 
 ## Wiring
 
