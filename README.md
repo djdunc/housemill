@@ -15,6 +15,8 @@ Also using tide information from https://pla.co.uk/Safety/Tidal-information
 
 # Sensor Box Scripts
 
+Sensor Box at House Mill 51.527220, -0.007761
+
 ## sonarbox-scripts/sonar-camera.py
 Script to take time lapse photos every 2 mins when water is above floor - script defaults to 1000mm
 
@@ -39,8 +41,24 @@ sudo apt-get install chromium-chromedriver
 ## server-scripts/river-level.py
 Webscrapes river level info from https://riverlevels.uk/ and posts them to mqtt broker every 15 mins. 
 
+Lea Bridge Coordinates: 51°34'4"N 0°3'3"W (51.567832,-0.051025)
+
+Silvertown Tidal Coordinates: 51°29'51"N 0°3'9"E (51.497504,0.052616)
+
+Tower Pier Tidal Coordinates: 51°30'24"N 0°4'43"W (51.506753,-0.078706)
+
+https://riverlevels.uk/levels/greater-london
+
 ## server-scripts/pla.py
 Webscrapes tide / river level info from http://www.pla.co.uk/ and posts them to mqtt broker every 15 mins. 
+
+Charlton 51.496765, 0.034353
+
+Silvertown 51.498080, 0.039556
+
+Tilbury 51.449332, 0.349288
+
+Tower 51.505296, -0.075174
 
 ## sonarbox-scripts/config.py (.gitignored)
 Passwords file containing following information:
@@ -84,3 +102,21 @@ Arduino Uno:
 RPi:
 - RPi cam v2.1 NOIR used
 - Initially used https://cpc.farnell.com/cyntech/lisiparoiir-01/rpi-ir-board-for-pi-camera/dp/SC13919 which was controlled via GPIO4 on pi - but LED's not bright enough so used separate source.
+
+## Sensor Locations
+
+Sensor Box at House Mill, UCL, 51.527220, -0.007761
+
+Charlton, PLA, 51.496765, 0.034353
+
+Silvertown, PLA, 51.498080, 0.039556
+
+Tilbury, PLA, 51.449332, 0.349288
+
+Tower, PLA, 51.505296, -0.075174
+
+Lea Bridge, River Levels, 51.567832,-0.051025
+
+Silvertown Tidal, River Levels,51.497504,0.052616
+
+Tower Pier Tidal, River Levels,51.506753,-0.078706
