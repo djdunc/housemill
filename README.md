@@ -20,9 +20,11 @@ Takes median of 11 readings coming in from Serial (Arduino sketch) and then post
 
 ## server-scripts/river-level.py
 Webscrapes river level info from https://riverlevels.uk/ and posts them to mqtt broker every 15 mins. 
+(In addition to paho, requires: pip install selenium)
 
 ## server-scripts/pla.py
 Webscrapes tide / river level info from http://www.pla.co.uk/ and posts them to mqtt broker every 15 mins. 
+(In addition to paho, requires: pip install pytz)
 
 ## sonarbox-scripts/config.py (.gitignored)
 Passwords file containing following information:
