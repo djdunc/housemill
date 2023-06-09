@@ -2,14 +2,16 @@
 
 Project with volunteers at House Mill to monitor flood waters in a grade 1 listed building.
 
+![House Mill](images/house_mill.jpeg)
+
 Using Maxbotix MB7389 (5m range) - https://maxbotix.com/pages/hrxl-maxsonar-wr-datasheet 
+
+![Sensor Box](images/wide_view.jpeg)
 
 Also using tide information from https://pla.co.uk/Safety/Tidal-information 
 
-## TO DO:
-- document hardware
-- move river-level and pla scripts off RPI to save on data usage on site
-- check sim connection with USB dongle
+## To do 
+- grafana view of data is behind firewall in CE lab, external view needed.
 
 # Sensor Box Scripts
 
