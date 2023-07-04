@@ -10,8 +10,9 @@ Using Maxbotix MB7389 (5m range) - https://maxbotix.com/pages/hrxl-maxsonar-wr-d
 
 Also using tide information from https://pla.co.uk/Safety/Tidal-information 
 
-## To do 
-- grafana view of data is behind firewall in CE lab, external view needed.
+## Website 
+
+A [Grafana dashboard](https://grafana.cetools.org/d/ecHWtb_Vz/sonar-height) of data captured is available.
 
 # Sensor Box Scripts
 
@@ -104,6 +105,8 @@ RPi:
 - Initially used https://cpc.farnell.com/cyntech/lisiparoiir-01/rpi-ir-board-for-pi-camera/dp/SC13919 which was controlled via GPIO4 on pi - but LED's not bright enough so used separate source.
 
 ## Sensor Locations
+
+Note: added as [JSON](sensor-locations.json) file also.
 
 Sensor Box at House Mill, UCL, 51.527220, -0.007761
 
