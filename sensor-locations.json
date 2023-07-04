@@ -1,0 +1,42 @@
+[
+  {
+    "name": "House Mill, UCL",
+    "latitude": 51.527220,
+    "longitude": -0.007761
+  },
+  {
+    "name": "Charlton, PLA",
+    "latitude": 51.496765,
+    "longitude": 0.034353
+  },
+  {
+    "name": "Silvertown, PLA",
+    "latitude": 51.498080,
+    "longitude": 0.039556
+  },
+  {
+    "name": "Tilbury, PLA",
+    "latitude": 51.449332,
+    "longitude": 0.349288
+  },
+  {
+    "name": "Tower, PLA",
+    "latitude": 51.505296,
+    "longitude": -0.075174
+  },
+  {
+    "name": "Lea Bridge, River Levels",
+    "latitude": 51.567832,
+    "longitude": -0.051025
+  },
+  {
+    "name": "Silvertown Tidal, River Levels",
+    "latitude": 51.497504,
+    "longitude": 0.052616
+  },
+  {
+    "name": "Tower Pier Tidal, River Levels",
+    "latitude": 51.506753,
+    "longitude": -0.078706
+  }
+]
