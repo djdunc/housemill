@@ -43,7 +43,6 @@ The file _Maxbotix-Sonar-height-data-2023_10-2024-09.csv_ has been cleaned and c
 
 ![minutes flooded](/data/mins-under-water-570.png)
 
-![above floor board flood events per month](/data/42-flooding-high-tides-touching-floorboards.png)
-
 ![touching floor board flood events per month](/data/136-flooding-high-tides-touching-floorboards.png)
 
+![above floor board flood events per month](/data/42-flooding-high-tides-touching-floorboards.png)
