@@ -25,18 +25,25 @@ The file _Maxbotix-Sonar-height-data-2023_10-2024-09.csv_ has been cleaned and c
 
 ## Scripts
 
-high-tides/ipynb - the high tides script looks for all instances of high tide and returns when in the day they occured - in theory shoyuld be 2 a day. Data is output in [high-tides.csv](/data/high-tides.csv)
+[high-tides.ipynb](/data/high-tides.ipynb) - the high tides script looks for all instances of high tide and returns when in the day they occured - in theory shoyuld be 2 a day. Data is output in [high-tides.csv](/data/high-tides.csv)
 
-The max height script then uses this data to return the dates of all the high tides that touched the floor boards.
+[flooding-high-tides.ipynb](/data/flooding-high-tides.ipynb) -  this script uses the high tide data to return the dates of all the high tides that touched the floor boards.
 
-minutes-under-water.ipynb - The time under water script shows how many minutes the floor boards were under water and produces the monthly totals graphs shown below.
+[minutes-under-water.ipynb](/data/minutes-under-water.ipynb) - The time under water script shows how many minutes the floor boards were under water and produces the monthly totals graphs shown below.
+
+[flood-event-plots.ipynb](/data/flood-event-plots.ipynb) - takes the flood events data and plots them as charts
 
 ## Data from October 2023 to September 2024
 
-166 flooding tides [data](/data/166-flooding-high-tides-touching-floorboards.csv)
+136 flooding tides [data](/data/136-flooding-high-tides-touching-floorboards.csv)
 
-61 flooding tides visible above floor boards [data](/data/61-flooding-high-tides-visible.csv)
+42 flooding tides visible above floor boards [data](/data/42-flooding-high-tides-visible.csv)
 
 ![minutes flooded](/data/mins-under-water-830.png)
 
 ![minutes flooded](/data/mins-under-water-570.png)
+
+![above floor board flood events per month](/data/42-flooding-high-tides-touching-floorboards.png)
+
+![touching floor board flood events per month](/data/136-flooding-high-tides-touching-floorboards.png)
+
