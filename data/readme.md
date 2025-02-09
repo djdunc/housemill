@@ -25,13 +25,20 @@ The file _Maxbotix-Sonar-height-data-2023_10-2024-09.csv_ has been cleaned and c
 
 ## Scripts
 
-[high-tides.ipynb](/data/high-tides.ipynb) - the high tides script looks for all instances of high tide and returns when in the day they occured - in theory shoyuld be 2 a day. Data is output in [high-tides.csv](/data/high-tides.csv)
+[high-tides.ipynb](/data/high-tides.ipynb) - the high tides script looks for all instances of high tide and returns when in the day they occured - in theory should be 2 a day. Data is output in [high-tides.csv](/data/high-tides.csv)
 
 [flooding-high-tides.ipynb](/data/flooding-high-tides.ipynb) -  this script uses the high tide data to return the dates of all the high tides that touched the floor boards.
 
 [minutes-under-water.ipynb](/data/minutes-under-water.ipynb) - The time under water script shows how many minutes the floor boards were under water and produces the monthly totals graphs shown below.
 
 [flood-event-plots.ipynb](/data/flood-event-plots.ipynb) - takes the flood events data and plots them as charts
+
+[duration-average.ipynb](/data/duration-average.ipynb) - calculates the average duration of each flood and standard deviation
+
+[proportion-floods-daytime.ipynb](/data/proportion-floods-daytime.ipynb) - calculates the numbers of floods occuring between 2 times - e.g. 9am to 6pm
+
+[stats-for-events.ipynb](/data/stats-for-events.ipynb) - calculating and significant differences in the human observed vs underfloor flood events
+
 
 ## Data from October 2023 to September 2024
 
