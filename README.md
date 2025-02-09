@@ -10,6 +10,14 @@ Using Maxbotix MB7389 (5m range) - https://maxbotix.com/pages/hrxl-maxsonar-wr-d
 
 Also using tide information from https://pla.co.uk/Safety/Tidal-information 
 
+## IoT System Overview
+The IoT system consisted of a Maxbotix MB7389 sonar sensor (5m range) connected to an Arduino connected via USB to a Raspberry Pi (RPi) single board computer. The RPi connects over WiFi to a GSM wifi bridge to send data to an MQTT broker on UCL server infrastructure. A seven segment LED display was connected to the Arduino to show real-time distance measurements for siting and validating the sensor, and a RPi NOIR camera plus IR LED ring were connected the RPi to create timelapse footage triggered by flood events. The sensor units were installed in a single enclosure and mounted on a tripod. The tripod and sensor were installed inside the building pointing vertically down through an opening in the floor. The height from the floor boards to the bottom of the channel below was approximately 7 meters. The sensor has a dynamic range of 30cm to 500cm and was installed 57cm above the top of the floor boards. The lower section of the floor boards was 83cm from the sensor.
+
+## Data Collection and Processing
+Data collection occurred at a frequency of 10 minutes, with 10 readings of water height taken during each interval.  To mitigate erroneous readings, the median value of these 10 readings was calculated and transmitted to the database.  Complementing these data, local river height information was retrieved every 15 minutes from the Port of London Authority website, providing a comparative data set.  All data collected was sent to an MQTT broker under the topic '/housemill/sonar/distance'. 
+
+A Telegraf agent subscribed to this MQTT topic, receiving and subsequently storing the data within an InfluxDB database.  This database served as the data source for a Grafana dashboard \parencite{Grafana}, which was designed to visualise the flood data and facilitate information sharing with volunteers and public officials.  One anomaly observed with the sensor was the occurrence of spurious reflected readings during low tide, when the distance to the water exceeded the sensor's range.  These reflected readings manifested as artificially shorter distance measurements. While this artifact is visible in the live data stream, it is removed during post-processing for the final data visualisations.
+
 ## Website 
 
 A [Grafana dashboard](https://grafana.cetools.org/d/ecHWtb_Vz/sonar-height) of data captured is available.
