@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Uncharted Waters: The House Mill Flood Report</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reset.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/white.min.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/highlight/monokai.min.css">
+        <style>
+            /* Custom styles for a more professional look */
+            :root {
+                --r-main-font: "Inter", sans-serif;
+                --r-heading-font: "Inter", sans-serif;
+                --r-main-font-size: 32px;
+                --r-heading-color: #1e293b; /* slate-800 */
+                --r-main-color: #334155; /* slate-700 */
+                --r-link-color: #2563eb; /* blue-600 */
+            }
+
+            .reveal .slides section {
+                text-align: left;
+            }
+
+            .reveal h1, .reveal h2, .reveal h3 {
+                text-transform: none;
+                font-weight: 700;
+            }
+
+            .reveal .slides section ul {
+                list-style-type: none;
+                padding-left: 0;
+            }
+
+            .reveal .slides section li {
+                padding-left: 1.5em;
+                text-indent: -1.5em;
+                margin-bottom: 0.5em;
+            }
+
+            .reveal .slides section li::before {
+                content: '■';
+                color: #3b82f6; /* blue-500 */
+                margin-right: 0.7em;
+                font-size: 0.8em;
+                display: inline-block;
+            }
+
+            .reveal .slides .title-slide {
+                text-align: center;
+            }
+            .reveal .slides .title-slide h1 {
+                font-size: 2.5em;
+                margin-bottom: 0.5em;
+            }
+             .reveal .slides .title-slide p {
+                margin-bottom: 0.25em;
+            }
+
+            .reveal .slides .question-slide {
+                text-align: center;
+                font-size: 1.5em;
+                font-weight: bold;
+            }
+        </style>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section class="title-slide">
+                    <h1>Uncharted Waters: Using IoT to Investigate Flood Effects on the Historic House Mill</h1>
+                    <p>Wilson D¹ & Zhang J²</p>
+                    <p style="font-size: 0.7em; margin-top: 1em;">¹The Bartlett Centre for Advanced Spatial Analysis, UCL<br>²Institute of Archeology, UCL</p>
+                    <p style="font-size: 0.8em; margin-top: 2em;">Presented by: [Your Name]</p>
+                </section>
+
+				<section>
+                    <h2>The Problem - A National Treasure at Risk</h2>
+                    <ul>
+                        <li><strong>Who:</strong> The House Mill, the UK's largest surviving tidal mill (Grade I listed).</li>
+                        <li><strong>What:</strong> It faces a growing threat from flooding due to climate change and urban development.</li>
+                        <li><strong>The Challenge:</strong> Floods happen at all hours, but monitoring relies on volunteers during the day. The true extent of water damage to the historic timber structure was unknown.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>The Old Way vs. The New Way</h2>
+                    <ul>
+                        <li><strong>Traditional Methods:</strong>
+                            <ul>
+                                <li>Infrequent manual checks by a shrinking team of volunteers.</li>
+                                <li>Data from regional sensors was not specific enough for the mill's unique location.</li>
+                                <li>Reliance on observing the <em>aftermath</em> of floods.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Our Solution:</strong> A micro-scale, on-site Internet of Things (IoT) monitoring system.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>The IoT System in Action</h2>
+                    <ul>
+                        <li><strong>What it is:</strong> A low-cost system using a sonar sensor and IR camera controlled by a Raspberry Pi.</li>
+                        <li><strong>What it does:</strong>
+                            <ul>
+                                <li>Measures water height every 10 minutes, 24/7.</li>
+                                <li>Transmits data in real-time.</li>
+                                <li>Visualizes the findings on a live dashboard for volunteers and stakeholders.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Key Finding #1 - The Hidden Floods Revealed</h2>
+                    <ul>
+                        <li>Over 12 months, volunteers could see evidence of <strong>42</strong> floods.</li>
+                        <li>The IoT system detected <strong>136</strong> flood events where water touched the floorboards.</li>
+                        <li class="fragment"><strong>This is a threefold increase</strong>, revealing a much higher frequency of water exposure than previously understood.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Key Finding #2 - Quantifying Submersion Time</h2>
+                    <ul>
+                        <li>For the first time, we could measure the exact <strong>duration</strong> the timber was soaking in water.</li>
+                        <li><strong>Example:</strong> In October, the floorboards were submerged for 900 minutes (15 hours).</li>
+                        <li>The average flood event lasted <strong>53 minutes</strong>. This data is crucial for assessing long-term decay risk.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Turning Data into Actionable Insight</h2>
+                    <ul>
+                        <li>The key metric became <strong>"total time touched by water"</strong>, a direct request from stakeholders.</li>
+                        <li>The data confirmed that <strong>over 60% of floods</strong> occurred outside of normal working hours (9 am - 6 pm), explaining why so many were missed.</li>
+                        <li>This provides a solid evidence base for future conservation and funding requests.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Empowering Volunteers & The Community</h2>
+                    <ul>
+                        <li>The system automates a critical monitoring task, reducing the burden on the small volunteer team.</li>
+                        <li>Real-time data gives them actionable insights to better protect the site.</li>
+                        <li>The public dashboard helps engage the community and improve the visitor experience by making the invisible threat visible.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Future Potential & Next Steps</h2>
+                    <ul>
+                        <li><strong>Flood Forecasting:</strong> Integrate IoT data with tide and weather data to predict flood events.</li>
+                        <li><strong>Early Warning System:</strong> Develop alerts that allow for proactive, on-site mitigation.</li>
+                        <li><strong>Improve a User-Friendly Interface:</strong> Simplify the dashboard for non-technical users to maximize engagement.</li>
+                    </ul>
+                </section>
+
+				<section>
+                    <h2>Conclusion - A Scalable Model for Heritage Protection</h2>
+                    <ul>
+                        <li>This project proves that low-cost IoT is highly effective for monitoring at-risk heritage sites.</li>
+                        <li>It provides previously unattainable data, turning anecdotal evidence into hard facts.</li>
+                        <li>The model is scalable and can be adopted by other cultural sites worldwide to safeguard our shared heritage against the threats of climate change.</li>
+                    </ul>
+                </section>
+
+                <section class="question-slide">
+                    <p>Thank you & Questions?</p>
+                </section>
+			</div>
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/notes/notes.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/markdown/markdown.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/highlight/highlight.min.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+                slideNumber: true,
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
