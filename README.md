@@ -2,6 +2,8 @@
 
 Project with volunteers at House Mill to monitor flood waters in a grade 1 listed building.
 
+CUPUM 2025 paper [cupum/CUPUM_HouseMill.pdf](Uncharted Waters: Using IoT to Investigate Flood Effects on the Historic House Mill) and [CUPUM presentation](https://www.iot.io/housemill/cupum/)
+
 ![House Mill](images/house_mill.jpeg)
 
 Using Maxbotix MB7389 (5m range) - https://maxbotix.com/pages/hrxl-maxsonar-wr-datasheet 
