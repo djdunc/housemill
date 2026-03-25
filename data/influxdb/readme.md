@@ -2,15 +2,6 @@
 
 This document compares the sonar distance data across the captured years, tracking flood events using the 830mm and 570mm thresholds.
 
-## Data Quality / Missing Data
-
-The nominal recording interval is 10 minutes. Any gap larger than 15 minutes between consecutive readings is considered missing data.
-
-| Year | Number of Gaps | Total Missing Time (Hrs) | Longest Gap (Hrs) | % of Year Missed |
-|---|---|---|---|---|
-| 2024 | 503 | 3705.8 | 22.3 | 42.19% |
-| 2025 | 91 | 216.2 | 75.8 | 2.47% |
-
 ## Threshold: < 830mm
 
 ### Yearly Statistics
