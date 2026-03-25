@@ -18,6 +18,14 @@ def process_file(file_path):
     df = df.sort_values('_time').reset_index(drop=True)
     
     time_diff_mins = df['_time'].diff(-1).abs().dt.total_seconds() / 60.0
+    
+    # Calculate missing data
+    # Standard interval is 10 mins. If gap > 15 mins, we have missing data.
+    df['gap_mins'] = 0.0
+    mask_gap = time_diff_mins > 15
+    df.loc[mask_gap, 'gap_mins'] = time_diff_mins[mask_gap] - 10.0
+    df['is_gap'] = mask_gap
+    
     df['duration_mins'] = time_diff_mins.fillna(10.0)
     df.loc[df['duration_mins'] > 15, 'duration_mins'] = 10.0
     
@@ -39,6 +47,40 @@ def generate_report(dfs, output_dir):
     
     readme_content = f"# Water Height Comparison ({title_years})\n\n"
     readme_content += "This document compares the sonar distance data across the captured years, tracking flood events using the 830mm and 570mm thresholds.\n\n"
+    
+    # ---------------------------------------------------------
+    # DATA QUALITY / MISSING DATA SECTION
+    # ---------------------------------------------------------
+    readme_content += "## Data Quality / Missing Data\n\n"
+    readme_content += "The nominal recording interval is 10 minutes. Any gap larger than 15 minutes between consecutive readings is considered missing data.\n\n"
+    
+    gap_rows = []
+    for year in years_present:
+        y_df = df[df['year'] == year]
+        if y_df.empty:
+            continue
+            
+        total_gaps = y_df['is_gap'].sum()
+        total_missing_hrs = y_df['gap_mins'].sum() / 60.0
+        max_gap_hrs = (y_df['gap_mins'].max() + 10.0) / 60.0 if total_gaps > 0 else 0
+        
+        total_hrs_in_year = 8784 if (year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)) else 8760
+        pct_missed = (total_missing_hrs / total_hrs_in_year) * 100.0
+        
+        gap_rows.append([
+            str(year),
+            str(total_gaps),
+            f"{total_missing_hrs:.1f}",
+            f"{max_gap_hrs:.1f}",
+            f"{pct_missed:.2f}%"
+        ])
+        
+    headers_gaps = ["Year", "Number of Gaps", "Total Missing Time (Hrs)", "Longest Gap (Hrs)", "% of Year Missed"]
+    readme_content += "| " + " | ".join(headers_gaps) + " |\n"
+    readme_content += "|" + "|".join(["---"] * len(headers_gaps)) + "|\n"
+    for row in gap_rows:
+        readme_content += "| " + " | ".join(row) + " |\n"
+    readme_content += "\n"
     
     thresholds = [830, 570]
     
@@ -76,7 +118,6 @@ def generate_report(dfs, output_dir):
             avg_duration = events['duration'].mean()
             std_duration = events['duration'].std() if total_events > 1 else 0.0
             
-            # Daytime is 8 AM to 7 PM (hours 8-18)
             daytime_events = events[(events['start_hour'] >= 8) & (events['start_hour'] < 19)].shape[0]
             daytime_pct = (daytime_events / total_events) * 100 if total_events > 0 else 0
             
