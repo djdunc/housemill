@@ -24,6 +24,10 @@ A Telegraf agent subscribed to this MQTT topic, receiving and subsequently stori
 
 A [Grafana dashboard](https://grafana.cetools.org/d/ecHWtb_Vz/sonar-height) of data captured is available.
 
+## Data
+
+Downloads from InfluxDB are available in the [data/influxdb](data/influxdb) directory with stats at [readme.md](data/influxdb/readme.md)
+
 # Sensor Box Scripts
 
 Sensor Box at House Mill 51.527220, -0.007761

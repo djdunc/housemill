@@ -2,3 +2,12 @@
 /server-scripts/config.py
 /sonarbox-scripts/config.py
 /server-scripts/__pycache__/config.cpython-311.pyc
+data/influxdb/ignore-env-variable.md
+house mill timelapse/20240310.mp4
+house mill timelapse/20240312.mp4
+house mill timelapse/20240313.mp4
+house mill timelapse/housemill-aug-flood.mp4
+house mill timelapse/housemill-aug-flood_sml.mp4
+video/Subtitle 1.srt
+video/script.srt
+grafana/queries.md
